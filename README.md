@@ -32,3 +32,7 @@ globetrekker/
    - Simply open `index.html` in your browser
    - Or use a local server like Live Server in VS Code
    - For Vue.js components, access `destinations.html`
+
+## Acknowledgement 
+
+This project was built as part of a Front-End Developer Technical Exam for the Elite DSI hiring process. I enjoyed working on it and learned a lot througout the process. 

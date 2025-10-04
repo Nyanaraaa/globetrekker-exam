@@ -25,7 +25,7 @@ globetrekker/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Nyanaraaa/globetrekker-exam
+   git clone https://github.com/Nyanaraaa/globetrekker-exam.git
    ```
 
 2. **Open in browser**

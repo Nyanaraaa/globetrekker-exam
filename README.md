@@ -25,19 +25,10 @@ globetrekker/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Nyanaraaa/globetrekker.git
-   cd globetrekker
+   git clone https://github.com/Nyanaraaa/globetrekker-exam
    ```
 
 2. **Open in browser**
    - Simply open `index.html` in your browser
    - Or use a local server like Live Server in VS Code
    - For Vue.js components, access `destinations.html`
-
-## 📂 Asset Paths
-
-- **Logo**: `assets/globetrekker.png`
-- **Images**: `assets/images/filename.jpg`
-  - Beach: `assets/images/beach.jpg`
-  - City: `assets/images/city.jpg`
-  - Mountain: `assets/images/mountain.jpg`

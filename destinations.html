@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - GlobeTrekker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="icon" href="globetrekker/public/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/globetrekker.png" alt="GlobeTrekker Logo">
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" aria-label="Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="destinations.html" class="nav-link active" aria-label="Destinations">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link" aria-label="About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link" aria-label="Contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="destinations-hero">
+            <div class="hero-container">
+                <div class="dest-hero-content">
+                    <h1>Explore beautiful <br> world with us</h1>
+                    <p>"Let us take the hassle out of travel planning, <br> so you can focus on the adventure ahead."
+                    </p>
+                    <button class="dest-cta-btn" type="button" aria-label="Discover destinations">
+                        Discover Now
+                    </button>
+                </div>
+                <div class="hero-images">
+                    <div class="hero-image-card active" data-index="0">
+                        <img src="assets/images/beach.jpg" alt="Tropical Beach Paradise">
+                    </div>
+                    <div class="hero-image-card" data-index="1">
+                        <img src="assets/images/city.jpg" alt="Metropolitan City">
+                    </div>
+                    <div class="hero-image-card" data-index="2">
+                        <img src="assets/images/mountain.jpg" alt="Mountain Adventure">
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-search-booking">
+                <div class="search-booking-form">
+                    <div class="field-group">
+                        <label for="destination"><i class="fas fa-map-marker-alt"></i> Destinations</label>
+                        <select id="destination" name="destination">
+                            <option value="kintamani">Kintamani</option>
+                            <option value="bali">Bali</option>
+                            <option value="lombok">Lombok</option>
+                            <option value="flores">Flores</option>
+                            <option value="komodo">Komodo Island</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="date"><i class="fas fa-calendar-alt"></i> Date</label>
+                        <input type="date" id="date" name="date" value="2025-08-17">
+                    </div>
+
+                    <div class="field-group">
+                        <label for="people"><i class="fas fa-users"></i> Many of People</label>
+                        <select id="people" name="people">
+                            <option value="2">Adult 2</option>
+                            <option value="1">Adult 1</option>
+                            <option value="3">Adult 3</option>
+                            <option value="4">Adult 4</option>
+                            <option value="5">Adult 5+</option>
+                        </select>
+                    </div>
+
+                    <button id="open-booking" class="book-trip-btn" type="button" aria-label="Open booking form"
+                        data-destination="Indonesia Getaway">
+                        <span>Book your trip</span>
+                        <div class="btn-icon">→</div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="hot-deals-section">
+            <div class="deals-container">
+                <div class="section-header" data-bg-text="PROMOTION">
+                    <h2>Hot Deals</h2>
+                    <p>Fire up your savings with our incredible hot deals and exclusive travel packages. Discover
+                        amazing destinations at unbeatable prices, with limited-time offers that won't last long.</p>
+                </div>
+                <div id="destination-app">
+                    <div class="destination-grid">
+                        <destination-card v-for="destination in destinations" :key="destination.id"
+                            :image="destination.image" :title="destination.title" :description="destination.description"
+                            @book-now="handleBookNow"></destination-card>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <div id="booking-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+        <div class="modal-overlay" data-close></div>
+        <div class="modal-panel" role="document">
+            <button class="modal-close" aria-label="Close booking form" data-close>&times;</button>
+            <h2 id="booking-title">Book Your Trip</h2>
+            <form id="booking-form">
+                <div class="form-row">
+                    <label for="modal-name">Full name</label>
+                    <input id="modal-name" name="name" type="text" required />
+                </div>
+                <div class="form-row">
+                    <label for="modal-email">Email</label>
+                    <input id="modal-email" name="email" type="email" required />
+                </div>
+                <div class="form-row">
+                    <label for="modal-destination">Destination</label>
+                    <input id="modal-destination" name="destination" type="text" readonly />
+                </div>
+                <div class="form-row">
+                    <label for="modal-date">Travel date</label>
+                    <input id="modal-date" name="date" type="date" required />
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="cta-btn">Confirm Booking</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

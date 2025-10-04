@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobeTrekker - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="globetrekker/public/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/globetrekker.png" alt="GlobeTrekker Logo">
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link" aria-label="Home">Home</a></li>
+                    <li class="nav-item"><a href="destinations.html" class="nav-link"
+                            aria-label="Destinations">Destinations</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link" aria-label="About">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active" aria-label="Contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="section-header" data-bg-text="CONTACT">
+                    <h2>Write to Us</h2>
+                    <p>We're here to help you with your travel plans.<br>Reach out to us anytime!</p>
+                </div>
+                <div class="contact-content">
+
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <form id="contactForm" class="contact-form" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span class="required-asterisk">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" required
+                                        aria-describedby="firstNameError" autocomplete="given-name">
+                                    <span class="error-message" id="firstNameError" role="alert"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span class="required-asterisk">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" required
+                                        aria-describedby="lastNameError" autocomplete="family-name">
+                                    <span class="error-message" id="lastNameError" role="alert"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address <span class="required-asterisk">*</span></label>
+                                <input type="email" id="contactEmail" name="email" required
+                                    aria-describedby="emailError" autocomplete="email">
+                                <span class="error-message" id="emailError" role="alert"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMessage">Message <span class="required-asterisk">*</span></label>
+                                <textarea id="contactMessage" name="message" rows="6" required
+                                    aria-describedby="messageError"
+                                    placeholder="Tell us about your travel plans or ask any questions..."></textarea>
+                                <span class="error-message" id="messageError" role="alert"></span>
+                            </div>
+
+                            <button type="submit" class="submit-btn" aria-label="Send message">Send Message</button>
+                        </form>
+
+                        <div id="contactConfirmation" class="confirmation-message" style="display: none;" role="alert"
+                            tabindex="-1">
+                            <h3>Thank you for your message!</h3>
+                            <p>We'll get back to you within 24 hours.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>hello@globetrekker.com</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <div>
+                                    <h4>Address</h4>
+                                    <p>123 Adventure Street<br>Travel City, TC 12345</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fas fa-clock contact-icon"></i>
+                                <div>
+                                    <h4>Business Hours</h4>
+                                    <p>Mon-Fri: 9AM - 6PM<br>Sat-Sun: 10AM - 4PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.355408524749!2d-74.0059413!3d40.7589574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1635724000000!5m2!1sen!2sus"
+                                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" title="GlobeTrekker Office Location"
+                                aria-label="Map showing GlobeTrekker office location">
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
